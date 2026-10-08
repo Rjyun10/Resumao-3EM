@@ -1,0 +1,133 @@
+:root {
+  --bg-dark: #0f172a;
+  --card-dark: #1e293b;
+  --sidebar-dark: #090d16;
+  --accent-cyan: #38bdf8;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  scroll-behavior: smooth;
+}
+
+.bg-dark-sidebar {
+  background-color: var(--sidebar-dark) !important;
+}
+
+/* Sidebar Desktop Fixo */
+.sidebar {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background-color: var(--sidebar-dark);
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.sidebar a {
+  color: var(--text-muted);
+  text-decoration: none;
+  display: block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.sidebar a:hover, 
+.sidebar a.active {
+  background-color: rgba(56, 189, 248, 0.15);
+  color: var(--accent-cyan);
+}
+
+.bg-dark-card {
+  background-color: var(--card-dark);
+}
+
+.card-custom {
+  border: 1px solid #334155;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  margin-bottom: 25px;
+  background: var(--card-dark);
+}
+
+.card-header-custom {
+  background-color: #1a2332;
+  color: var(--accent-cyan);
+  border-bottom: 1px solid #334155;
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+  font-weight: 600;
+}
+
+canvas {
+  max-height: 320px;
+  width: 100% !important;
+}
+
+.svg-container {
+  max-width: 100%;
+  height: auto;
+}
+/* Correção do Layout Principal e Alinhamento do Footer */
+.main-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+footer {
+  background-color: var(--sidebar-dark);
+  color: var(--text-muted);
+  width: 100%;
+  border-radius: 6px
+}
+
+footer a.btn-outline-info {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+footer a.btn-outline-info:hover {
+  background-color: var(--accent-cyan);
+  color: #090d16;
+}
+
+/* Ajustes de Menu Compacto para Dispositivos Móveis */
+@media (max-width: 767.98px) {
+  .main-content {
+    margin-top: 56px;
+  }
+
+  .sidebar {
+    height: auto !important;
+  }
+
+  /* O menu agora ocupa apenas o tamanho do conteúdo interno */
+  .sidebar.collapse {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: auto !important; /* Libera o fundo da tela */
+    height: auto !important; /* Ajusta a altura estritamente ao tamanho da lista */
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    background-color: var(--sidebar-dark);
+    z-index: 1040;
+    padding: 1rem !important;
+    border-bottom: 2px solid var(--accent-cyan); /* Linha sutil para destacar onde o menu termina */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+  }
+
+  /* Transição suave do Bootstrap */
+  .sidebar.collapsing {
+    transition: height 0.25s ease-in-out !important;
+  }
+}

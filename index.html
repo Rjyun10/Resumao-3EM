@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumão Interativo de Matemática - Modo Noturno</title>
+    <!-- Favicon / Ícone da Aba do Navegador -->
+    <link rel="icon" type="image/svg+xml" href="imagens/favicon.svg">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Estilo Customizado Noturno -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- MathJax Configuração e Script -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<!-- Navbar Mobile Fixo no Topo -->
+<nav class="navbar navbar-dark bg-dark-sidebar border-bottom border-secondary d-md-none fixed-top p-0 m-0" style="height: 56px;">
+  <div class="container-fluid h-100 px-3 d-flex align-items-center justify-content-between">
+    <a class="navbar-brand text-info fw-bold m-0 p-0" href="#">
+      <i class="bi bi-moon-stars-fill"></i> Resumo Math
+    </a>
+    <button class="navbar-toggler border-secondary p-1" type="type" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar de Navegação Desktop / Menu Mobile Collapse -->
+    <nav class="col-md-3 col-lg-2 sidebar collapse d-md-block p-3" id="sidebarMenu">
+      <h4 class="text-center py-2 text-info d-none d-md-block"><i class="bi bi-moon-stars-fill"></i> Resumo Math</h4>
+      <hr class="border-secondary d-none d-md-block">
+      
+      <h6 class="text-uppercase text-muted fs-7 fw-bold">Capítulo 10: Aritmética</h6>
+      <a href="#conjuntos"><i class="bi bi-diagram-3"></i> Conjuntos Numéricos</a>
+      <a href="#financeira"><i class="bi bi-cash-coin"></i> Mat. Financeira & Juros</a>
+      <a href="#combinatoria"><i class="bi bi-calculator"></i> Análise Combinatória</a>
+
+      <h6 class="text-uppercase text-muted fs-7 fw-bold mt-3">Capítulo 11: Álgebra</h6>
+      <a href="#fatoracao"><i class="bi bi-boxes"></i> Fatoração & Equações</a>
+      <a href="#classificacao-funcoes"><i class="bi bi-diagram-2"></i> Tipos de Funções</a>
+      <a href="#funcao-afim"><i class="bi bi-graph-up-arrow"></i> Função Afim</a>
+      <a href="#funcao-quadratica"><i class="bi bi-graph-down"></i> Função Quadrática</a>
+      <a href="#funcao-modular"><i class="bi bi-node-plus"></i> Função Modular</a>
+      <a href="#funcao-exp-log"><i class="bi bi-activity"></i> Exponencial & Logarítmica</a>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4 main-content">
+
+      <!-- Banner -->
+      <div class="p-4 mb-4 rounded-3 bg-dark-card border-start border-4 border-info shadow-sm">
+        <h1 class="display-6 fw-bold text-light">Guia Prático e Interativo de Matemática</h1>
+        <p class="col-md-10 fs-6 text-muted">Aprenda Aritmética e Álgebra através de fórmulas formatadas, significado das variáveis, visualizações gráficas e simuladores em tempo real.</p>
+      </div>
+
+      <!-- CAPÍTULO 10: ARITMÉTICA -->
+      <h2 class="text-info border-bottom border-secondary pb-2 mb-4" id="conjuntos">Capítulo 10: Aritmética</h2>
+
+      <!-- Conjuntos Numéricos -->
+      <div class="card card-custom">
+        <div class="card-header card-header-custom"><i class="bi bi-diagram-3"></i> Conjuntos Numéricos</div>
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col-lg-6 mb-3">
+              <h5>Resumo Teórico</h5>
+              <p class="text-muted">Os números são agrupados em conjuntos de acordo com suas propriedades:</p>
+              
+              <div class="accordion accordion-flush" id="accordionConjuntos">
+                <div class="accordion-item bg-dark border-secondary">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#c1">
+                      <strong>$\mathbb{N}$ — Números Naturais</strong>
+                    </button>
+                  </h2>
+                  <div id="c1" class="accordion-collapse collapse" data-bs-parent="#accordionConjuntos">
+                    <div class="accordion-body text-muted">Contagem não negativa: $\{0, 1, 2, 3, 4, \dots\}$</div>
+                  </div>
+                </div>
+
+                <div class="accordion-item bg-dark border-secondary">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#c2">
+                      <strong>$\mathbb{Z}$ — Números Inteiros</strong>
+                    </button>
+                  </h2>
+                  <div id="c2" class="accordion-collapse collapse" data-bs-parent="#accordionConjuntos">
+                    <div class="accordion-body text-muted">Naturais e seus opostos negativos: $\{\dots, -2, -1, 0, 1, 2, \dots\}$</div>
+                  </div>
+                </div>
+
+                <div class="accordion-item bg-dark border-secondary">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#c3">
+                      <strong>$\mathbb{Q}$ — Números Racionais</strong>
+                    </button>
+                  </h2>
+                  <div id="c3" class="accordion-collapse collapse" data-bs-parent="#accordionConjuntos">
+                    <div class="accordion-body text-muted">Podem ser escritos na forma $a/b$ com $b \neq 0$. Ex: $\frac{1}{2}, 0.75, -3$</div>
+                  </div>
+                </div>
+
+                <div class="accordion-item bg-dark border-secondary">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#c4">
+                      <strong>$\mathbb{R} \setminus \mathbb{Q}$ — Irracionais e $\mathbb{R}$ — Reais</strong>
+                    </button>
+                  </h2>
+                  <div id="c4" class="accordion-collapse collapse" data-bs-parent="#accordionConjuntos">
+                    <div class="accordion-body text-muted">
+                      <strong>Irracionais:</strong> Decimais infinitos não periódicos. Ex: $\pi, \sqrt{2}, e$.<br>
+                      <strong>Reais ($\mathbb{R}$):</strong> União dos Racionais e Irracionais.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Diagrama SVG -->
+            <div class="col-lg-6 text-center">
+              <h6>Diagrama de Inclusão dos Conjuntos</h6>
+              <div class="svg-container mt-2">
+                <svg viewBox="0 0 420 310" class="w-100">
+                  <rect x="10" y="10" width="400" height="290" rx="15" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                  <text x="25" y="35" fill="#38bdf8" font-weight="bold" font-size="14">Reais (ℝ)</text>
+
+                  <rect x="270" y="55" width="125" height="230" rx="10" fill="#0f172a" stroke="#f43f5e" stroke-width="2"/>
+                  <text x="280" y="80" fill="#f43f5e" font-size="12" font-weight="bold">Irracionais (ℝ\ℚ)</text>
+                  <text x="315" y="110" fill="#94a3b8" font-size="12">π, √2, e</text>
+
+                  <circle cx="140" cy="170" r="105" fill="#0f172a" stroke="#a855f7" stroke-width="2"/>
+                  <text x="100" y="82" fill="#a855f7" font-weight="bold" font-size="13">Racionais (ℚ)</text>
+                  <text x="80" y="100" fill="#94a3b8" font-size="11">½,  0.75,  3.33...</text>
+
+                  <circle cx="140" cy="185" r="72" fill="#1e293b" stroke="#eab308" stroke-width="2"/>
+                  <text x="105" y="130" fill="#eab308" font-weight="bold" font-size="13">Inteiros (ℤ)</text>
+                  <text x="112" y="146" fill="#94a3b8" font-size="11">-1,  -2,  -5</text>
+
+                  <circle cx="140" cy="205" r="40" fill="#0f172a" stroke="#22c55e" stroke-width="2"/>
+                  <text x="108" y="195" fill="#22c55e" font-weight="bold" font-size="12">Naturais (ℕ)</text>
+                  <text x="115" y="215" fill="#94a3b8" font-size="11">0, 1, 2, 3...</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- Matemática Financeira & Juros -->
+      <div class="card card-custom" id="financeira">
+        <div class="card-header card-header-custom"><i class="bi bi-cash-coin"></i> Matemática Financeira</div>
+        <div class="card-body">
+          <div class="alert alert-dark border-secondary mb-4">
+            <h5><i class="bi bi-info-circle text-info"></i> Fórmulas de Juros e Aumentos/Descontos</h5>
+            <div class="row mt-2">
+              <div class="col-md-6">
+                <h6><strong>Juros Simples:</strong></h6>
+                <p class="mb-1">$$J = C \cdot i \cdot t$$</p>
+                <p class="mb-0 text-muted small">Montante: $M = C + J = C(1 + i \cdot t)$</p>
+              </div>
+              <div class="col-md-6">
+                <h6><strong>Juros Compostos:</strong></h6>
+                <p class="mb-1">$$M = C \cdot (1 + i)^t$$</p>
+                <p class="mb-0 text-muted small">Juros acumulados: $J = M - C$</p>
+              </div>
+            </div>
+            
+            <!-- Legenda das Variáveis Financeiras -->
+            <div class="bg-dark p-3 rounded mt-3 border border-secondary">
+              <h6 class="text-info mb-2"><i class="bi bi-key"></i> Legenda das Variáveis:</h6>
+              <div class="row text-muted small">
+                <div class="col-6 col-md-3"><strong>C:</strong> Capital Inicial</div>
+                <div class="col-6 col-md-3"><strong>J:</strong> Valor dos Juros</div>
+                <div class="col-6 col-md-3"><strong>i:</strong> Taxa de Juros (decimal)</div>
+                <div class="col-6 col-md-3"><strong>t:</strong> Tempo (meses/anos)</div>
+                <div class="col-6 col-md-3 mt-1"><strong>M:</strong> Montante Final</div>
+                <div class="col-6 col-md-3 mt-1"><strong>V₀:</strong> Valor Inicial</div>
+                <div class="col-6 col-md-3 mt-1"><strong>V_f:</strong> Valor Final</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-5 mb-3">
+              <h5>Simulador Interno</h5>
+              <div class="mb-2">
+                <label class="form-label">Capital Inicial ($C$):</label>
+                <input type="number" id="capital" class="form-control" value="1000">
+              </div>
+              <div class="mb-2">
+                <label class="form-label">Taxa de Juros ao mês (%):</label>
+                <input type="number" id="taxa" class="form-control" value="5">
+              </div>
+              <div class="mb-2">
+                <label class="form-label">Tempo (meses):</label>
+                <input type="number" id="tempo" class="form-control" value="12">
+              </div>
+              <button onclick="calcularJuros()" class="btn btn-info w-100 mt-2">Calcular e Comparar</button>
+            </div>
+            <div class="col-lg-7">
+              <canvas id="chartJuros"></canvas>
+            </div>
+          </div>
+
+          <!-- Redirecionamento para o DarkInvest 2026 -->
+          <div class="mt-4 pt-4 border-top border-secondary text-center">
+            <div class="p-4 rounded bg-dark border border-secondary shadow-sm d-inline-block w-100">
+              <h5 class="text-info mb-2"><i class="bi bi-rocket-takeoff"></i> Simulação Avançada com DarkInvest 2026</h5>
+              <p class="text-muted small mb-3">Para calcular aportes mensais, metas de investimentos, financiamentos e cotações completas sem limitações de espaço, acesse a ferramenta dedicada.</p>
+              <a href="https://rjyun10.github.io/DarkInvest-2026/" target="_blank" class="btn btn-info btn-lg px-4 fw-bold">
+                <i class="bi bi-box-arrow-up-right me-2"></i> Abrir DarkInvest 2026 em nova página
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Análise Combinatória -->
+      <div class="card card-custom" id="combinatoria">
+        <div class="card-header card-header-custom"><i class="bi bi-calculator"></i> Análise Combinatória</div>
+        <div class="card-body">
+          <p class="text-muted mb-3">Métodos de contagem para determinar o número de agrupamentos possíveis:</p>
+          
+          <!-- Legenda das Variáveis Combinatórias -->
+          <div class="bg-dark p-2 rounded mb-4 border border-secondary text-muted small">
+            <strong><i class="bi bi-key text-info"></i> Legenda:</strong> 
+            <span class="ms-2"><strong>n:</strong> Total de elementos disponíveis | </span>
+            <span><strong>k:</strong> Elementos escolhidos/agrupados | </span>
+            <span><strong>!:</strong> Fatorial (Ex: $5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$)</span>
+          </div>
+
+          <div class="row text-center">
+            <div class="col-md-4 mb-3">
+              <div class="p-3 border border-secondary rounded bg-dark">
+                <h6>Permutação Simples</h6>
+                <p>$$P_n = n!$$</p>
+                <p class="small text-muted">Agrupar todos os $n$ elementos. A ordem importa!</p>
+                <input type="number" id="permN" class="form-control mb-2" value="5" placeholder="n">
+                <button onclick="calcPermutacao()" class="btn btn-sm btn-outline-info w-100">Calcular</button>
+                <div id="resPerm" class="mt-2 fw-bold text-info"></div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="p-3 border border-secondary rounded bg-dark">
+                <h6>Arranjo Simples</h6>
+                <p>$$A_{n,k} = \frac{n!}{(n-k)!}$$</p>
+                <p class="small text-muted">Escolher $k$ elementos de $n$. A ordem importa!</p>
+                <div class="d-flex gap-1 mb-2">
+                  <input type="number" id="arrN" class="form-control" value="5" placeholder="n">
+                  <input type="number" id="arrK" class="form-control" value="2" placeholder="k">
+                </div>
+                <button onclick="calcArranjo()" class="btn btn-sm btn-outline-info w-100">Calcular</button>
+                <div id="resArr" class="mt-2 fw-bold text-info"></div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="p-3 border border-secondary rounded bg-dark">
+                <h6>Combinação Simples</h6>
+                <p>$$C_{n,k} = \frac{n!}{k!(n-k)!}$$</p>
+                <p class="small text-muted">Escolher $k$ elementos de $n$. A ordem NÃO importa!</p>
+                <div class="d-flex gap-1 mb-2">
+                  <input type="number" id="combN" class="form-control" value="5" placeholder="n">
+                  <input type="number" id="combK" class="form-control" value="2" placeholder="k">
+                </div>
+                <button onclick="calcCombinacao()" class="btn btn-sm btn-outline-info w-100">Calcular</button>
+                <div id="resComb" class="mt-2 fw-bold text-info"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAPÍTULO 11: ÁLGEBRA -->
+      <h2 class="text-info border-bottom border-secondary pb-2 mb-4 mt-5" id="fatoracao">Capítulo 11: Álgebra</h2>
+
+      <!-- Fatoração e Equações Elementares -->
+      <div class="card card-custom">
+        <div class="card-header card-header-custom"><i class="bi bi-boxes"></i> Fatoração, Produtos Notáveis & Equações</div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <h5>Produtos Notáveis e Fatoração</h5>
+              <ul class="list-group list-group-flush border-secondary">
+                <li class="list-group-item bg-dark text-light border-secondary">Quadrado da Soma: $(a + b)^2 = a^2 + 2ab + b^2$</li>
+                <li class="list-group-item bg-dark text-light border-secondary">Quadrado da Diferença: $(a - b)^2 = a^2 - 2ab + b^2$</li>
+                <li class="list-group-item bg-dark text-light border-secondary">Diferença de Quadrados: $a^2 - b^2 = (a + b)(a - b)$</li>
+                <li class="list-group-item bg-dark text-light border-secondary">Fator Comum em Evidência: $ax + ay = a(x + y)$</li>
+              </ul>
+            </div>
+            <div class="col-md-6 mb-3">
+              <h5>Equações e Inequações de 1º e 2º Graus</h5>
+              <div class="p-3 bg-dark border border-secondary rounded">
+                <h6>1º Grau ($ax + b = 0$):</h6>
+                <p class="mb-2">Solução: $x = -\frac{b}{a}$</p>
+                <h6>2º Grau ($ax^2 + bx + c = 0$):</h6>
+                <p class="mb-1">Discriminante: $\Delta = b^2 - 4ac$</p>
+                <p class="mb-0">Fórmula de Bhaskara: $$x = \frac{-b \pm \sqrt{\Delta}}{2a}$$</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Legenda das Variáveis Algébricas -->
+          <div class="bg-dark p-2 rounded mt-2 border border-secondary text-muted small">
+            <strong><i class="bi bi-key text-info"></i> Legenda:</strong> 
+            <span><strong>a, b, c:</strong> Coeficientes numéricos da equação | </span>
+            <span><strong>x:</strong> Variável/Incógnita a ser descoberta | </span>
+            <span><strong>Δ (Delta):</strong> Discriminante que define a quantidade de raízes reais</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Classificação de Funções, Composta e Inversa -->
+      <div class="card card-custom" id="classificacao-funcoes">
+        <div class="card-header card-header-custom"><i class="bi bi-diagram-2"></i> Classificação, Composição e Inversão de Funções</div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <h6>Classificação de Funções:</h6>
+              <ul class="small text-muted ps-3">
+                <li><strong>Injetora:</strong> Elementos distintos do domínio têm imagens distintas.</li>
+                <li><strong>Sobrejetora:</strong> O contradomínio é igual à imagem ($CD = Im$).</li>
+                <li><strong>Bijetora:</strong> É injetora e sobrejetora ao mesmo tempo.</li>
+              </ul>
+            </div>
+            <div class="col-md-4 mb-3">
+              <h6>Função Composta:</h6>
+              <p class="small text-muted">Aplica-se uma função dentro de outra:</p>
+              <p>$$(f \circ g)(x) = f(g(x))$$</p>
+            </div>
+            <div class="col-md-4 mb-3">
+              <h6>Função Inversa ($f^{-1}$):</h6>
+              <p class="small text-muted">Apenas funções bijetoras possuem inversa. Troca-se $x$ por $y$ e isola-se $y$:</p>
+              <p>$$f(f^{-1}(x)) = x$$</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Função Afim -->
+      <div class="card card-custom" id="funcao-afim">
+        <div class="card-header card-header-custom"><i class="bi bi-graph-up-arrow"></i> Função Afim ($f(x) = ax + b$)</div>
+        <div class="card-body">
+          <div class="alert alert-dark border-secondary mb-3">
+            <strong>Resumo:</strong> Função polinomial do 1º grau cujo gráfico é uma reta.
+            <div class="mt-2 text-muted small">
+              <strong><i class="bi bi-key text-info"></i> Legenda das Variáveis:</strong><br>
+              • <strong>x:</strong> Variável independente (Eixo horizontal)<br>
+              • <strong>f(x) ou y:</strong> Variável dependente (Eixo vertical)<br>
+              • <strong>a (Coeficiente Angular):</strong> Taxa de variação/inclinação da reta<br>
+              • <strong>b (Coeficiente Linear):</strong> Valor onde a reta corta o eixo Y (quando $x=0$)
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label class="form-label">Inclinação ($a$): <span id="valA" class="badge bg-info">1</span></label>
+              <input type="range" class="form-range" id="sliderA" min="-5" max="5" step="0.5" value="1" oninput="updateAfim()">
+              
+              <label class="form-label mt-3">Interseção Y ($b$): <span id="valB" class="badge bg-info">0</span></label>
+              <input type="range" class="form-range" id="sliderB" min="-5" max="5" step="0.5" value="0" oninput="updateAfim()">
+
+              <div class="alert alert-secondary mt-3">
+                <strong>Equação:</strong> <span id="eqAfim" class="font-monospace">f(x) = 1x + 0</span>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <canvas id="chartAfim"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Função Quadrática -->
+      <div class="card card-custom" id="funcao-quadratica">
+        <div class="card-header card-header-custom"><i class="bi bi-graph-down"></i> Função Quadrática ($f(x) = ax^2 + bx + c$)</div>
+        <div class="card-body">
+          <div class="alert alert-dark border-secondary mb-3">
+            <strong>Resumo:</strong> Função do 2º grau cujo gráfico é uma parábola.
+            <div class="mt-2 text-muted small">
+              <strong><i class="bi bi-key text-info"></i> Legenda das Variáveis:</strong><br>
+              • <strong>a:</strong> Define a curvatura/concavidade (Positivo = $\cup$, Negativo = $\cap$)<br>
+              • <strong>b:</strong> Inclinação da curva ao cruzar o eixo Y<br>
+              • <strong>c:</strong> Ponto onde a parábola corta o eixo Y<br>
+              • <strong>x_v, y_v:</strong> Coordenadas do Vértice (Ponto máximo ou mínimo)
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label class="form-label">$a$ (Curvatura): <span id="valQuadA" class="badge bg-info">1</span></label>
+              <input type="range" class="form-range" id="sliderQuadA" min="-3" max="3" step="0.5" value="1" oninput="updateQuad()">
+
+              <label class="form-label mt-2">$b$ (Inclin. Central): <span id="valQuadB" class="badge bg-info">0</span></label>
+              <input type="range" class="form-range" id="sliderQuadB" min="-5" max="5" step="0.5" value="0" oninput="updateQuad()">
+
+              <label class="form-label mt-2">$c$ (Corte em Y): <span id="valQuadC" class="badge bg-info">-4</span></label>
+              <input type="range" class="form-range" id="sliderQuadC" min="-5" max="5" step="0.5" value="-4" oninput="updateQuad()">
+
+              <div class="alert alert-warning bg-dark border-warning text-warning mt-3">
+                <small id="infoQuad">Vértice e Raízes serão calculados aqui.</small>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <canvas id="chartQuad"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Função Modular -->
+      <div class="card card-custom" id="funcao-modular">
+        <div class="card-header card-header-custom"><i class="bi bi-node-plus"></i> Função Modular ($f(x) = |x|$)</div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <h5>Definição de Módulo</h5>
+              <p>$$|x| = \begin{cases} x, & \text{se } x \ge 0 \\ -x, & \text{se } x < 0 \end{cases}$$</p>
+              <p class="small text-muted">O módulo $|x|$ representa a distância absoluta do número até a origem (0) na reta real.</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <h5>Propriedades Principais</h5>
+              <ul class="small text-muted">
+                <li>$|x| \ge 0$ para todo $x \in \mathbb{R}$</li>
+                <li>$|x \cdot y| = |x| \cdot |y|$</li>
+                <li>Inequação: $|x| \le a \iff -a \le x \le a$</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Função Exponencial e Logarítmica -->
+      <div class="card card-custom" id="funcao-exp-log">
+        <div class="card-header card-header-custom"><i class="bi bi-activity"></i> Função Exponencial & Logarítmica</div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <h5>Função Exponencial ($f(x) = a^x$)</h5>
+              <p class="small text-muted"><strong>a:</strong> Base constante ($a > 0$ e $a \neq 1$) | <strong>x:</strong> Expoente variável.</p>
+              <ul class="small text-muted">
+                <li>Crescente se $a > 1$, Decrescente se $0 < a < 1$.</li>
+                <li>Exponencial Natural: $f(x) = e^x$ onde $e \approx 2.718$ (Número de Euler).</li>
+              </ul>
+            </div>
+            <div class="col-md-6 mb-3">
+              <h5>Função Logarítmica ($f(x) = \log_a(x)$)</h5>
+              <p class="small text-muted">Inversa da exponencial: <strong>a:</strong> Base | <strong>b:</strong> Logaritmando | <strong>x:</strong> Resultado do logaritmo.</p>
+              <p>$$\log_a(b) = x \iff a^x = b$$</p>
+              <ul class="small text-muted">
+                <li>Mudança de base: $\log_a(b) = \frac{\log_c(b)}{\log_c(a)}$</li>
+                <li>Logaritmo Natural: $\ln(x) = \log_e(x)$</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- ... Último Card de Conteúdo (Capítulo 11) ... -->
+
+        <!-- Rodapé / Footer alinhado com a área principal -->
+        <footer class="bg-dark-sidebar border-top border-secondary py-4 mt-5 rounded-top">
+          <div class="container-fluid text-center text-md-start px-3">
+            <div class="row align-items-center gy-3">
+              <!-- Nome e Descrição -->
+              <div class="col-md-6">
+                <h6 class="text-info mb-1 fw-bold">
+                   &copy; Resumo Math by Jyun 2026
+                </h6>
+                <p class="text-muted small mb-0">
+                  Plataforma interativa para consulta rápida de fórmulas e conceitos de Aritmética e Álgebra.
+                </p>
+              </div>
+
+              <!-- Links de Contato e Instrução do Assunto -->
+              <div class="col-md-6 text-md-end">
+                <span class="text-muted small d-block mb-1">
+                  Encontrou um erro ou quer contribuir?
+                </span>
+                <p class="text-warning small mb-2" style="font-size: 0.82rem;">
+                  <i class="bi bi-exclamation-triangle me-1"></i> Ao enviar mensagem, coloque <strong>"Resumo Math"</strong> no assunto (subject).
+                </p>
+                <a href="https://rjyun10.github.io/#contato" target="_blank" class="btn btn-outline-info btn-sm px-3 fw-bold">
+                  <i class="bi bi-envelope-heart me-1"></i> Fale Conosco / Contato
+                </a>
+              </div>
+            </div>
+
+            <!-- Linha Divisória de Direitos -->
+            <div class="border-top border-secondary mt-3 pt-3 text-center text-muted small">
+              Desenvolvido para estudo e apoio acadêmico &bull; Tema Noturno Otimizado
+            </div>
+          </div>
+        </footer>
+
+      </main> <!-- Fechamento da tag main -->
+    </div> <!-- Fechamento da row -->
+  </div> <!-- Fechamento da container-fluid -->
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Script Customizado -->
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Fundo Escuro Arredondado (#0f172a / #090d16) -->
+  <rect width="64" height="64" rx="16" fill="#090d16"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+  
+  <!-- Lua Crescente em Glow/Cyan Noturno -->
+  <path d="M 42,12 A 18,18 0 1,0 52,42 A 22,22 0 1,1 42,12 Z" fill="#38bdf8" opacity="0.25" />
+  
+  <!-- Símbolo de Somatório / Matemática (Cyan Neon #38bdf8) -->
+  <path d="M 20,18 L 44,18 L 44,23 L 30,23 L 38,32 L 30,41 L 44,41 L 44,46 L 20,46 L 20,41 L 31,32 L 20,23 Z" fill="#38bdf8" />
+
+  <!-- Estrelas Noturnas (Acentos em Cyan Claro) -->
+  <circle cx="48" cy="18" r="2" fill="#f1f5f9" />
+  <circle cx="42" cy="48" r="1.5" fill="#38bdf8" />
+</svg>
