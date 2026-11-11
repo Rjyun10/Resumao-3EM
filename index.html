@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resumão Interativo de Matemática - Modo Noturno</title>
-    <!-- Favicon / Ícone da Aba do Navegador -->
-    <link rel="icon" type="image/svg+xml" href="imagens/favicon.svg">
+  <title>Resumão Interativo - Matemática & Física</title>
+  <!-- Favicon / Ícone da Aba do Navegador -->
+  <link rel="icon" type="image/svg+xml" href="imagens/favicon.svg">
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
@@ -30,9 +30,9 @@
 <nav class="navbar navbar-dark bg-dark-sidebar border-bottom border-secondary d-md-none fixed-top p-0 m-0" style="height: 56px;">
   <div class="container-fluid h-100 px-3 d-flex align-items-center justify-content-between">
     <a class="navbar-brand text-info fw-bold m-0 p-0" href="#">
-      <i class="bi bi-moon-stars-fill"></i> Resumo Math
+      <i class="bi bi-moon-stars-fill"></i> Resumo Geral
     </a>
-    <button class="navbar-toggler border-secondary p-1" type="type" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler border-secondary p-1" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   </div>
@@ -42,21 +42,26 @@
   <div class="row">
     <!-- Sidebar de Navegação Desktop / Menu Mobile Collapse -->
     <nav class="col-md-3 col-lg-2 sidebar collapse d-md-block p-3" id="sidebarMenu">
-      <h4 class="text-center py-2 text-info d-none d-md-block"><i class="bi bi-moon-stars-fill"></i> Resumo Math</h4>
+      <h4 class="text-center py-2 text-info d-none d-md-block"><i class="bi bi-moon-stars-fill"></i> Resumo Geral</h4>
       <hr class="border-secondary d-none d-md-block">
       
-      <h6 class="text-uppercase text-muted fs-7 fw-bold">Capítulo 10: Aritmética</h6>
+      <h6 class="text-uppercase text-muted fs-7 fw-bold">Matemática - Cap. 10</h6>
       <a href="#conjuntos"><i class="bi bi-diagram-3"></i> Conjuntos Numéricos</a>
       <a href="#financeira"><i class="bi bi-cash-coin"></i> Mat. Financeira & Juros</a>
       <a href="#combinatoria"><i class="bi bi-calculator"></i> Análise Combinatória</a>
 
-      <h6 class="text-uppercase text-muted fs-7 fw-bold mt-3">Capítulo 11: Álgebra</h6>
+      <h6 class="text-uppercase text-muted fs-7 fw-bold mt-3">Matemática - Cap. 11</h6>
       <a href="#fatoracao"><i class="bi bi-boxes"></i> Fatoração & Equações</a>
       <a href="#classificacao-funcoes"><i class="bi bi-diagram-2"></i> Tipos de Funções</a>
       <a href="#funcao-afim"><i class="bi bi-graph-up-arrow"></i> Função Afim</a>
       <a href="#funcao-quadratica"><i class="bi bi-graph-down"></i> Função Quadrática</a>
       <a href="#funcao-modular"><i class="bi bi-node-plus"></i> Função Modular</a>
       <a href="#funcao-exp-log"><i class="bi bi-activity"></i> Exponencial & Logarítmica</a>
+
+      <h6 class="text-uppercase text-warning fs-7 fw-bold mt-3">Física - Cap. 6</h6>
+      <a href="#fisica-forca"><i class="bi bi-magnet"></i> Força Magnética</a>
+      <a href="#fisica-aplicacoes"><i class="bi bi-cpu"></i> Motores e Eletroímãs</a>
+      <a href="#fisica-inducao"><i class="bi bi-lightning-charge"></i> Lei de Faraday & Lenz</a>
     </nav>
 
     <!-- Conteúdo Principal -->
@@ -64,8 +69,8 @@
 
       <!-- Banner -->
       <div class="p-4 mb-4 rounded-3 bg-dark-card border-start border-4 border-info shadow-sm">
-        <h1 class="display-6 fw-bold text-light">Guia Prático e Interativo de Matemática</h1>
-        <p class="col-md-10 fs-6 text-muted">Aprenda Aritmética e Álgebra através de fórmulas formatadas, significado das variáveis, visualizações gráficas e simuladores em tempo real.</p>
+        <h1 class="display-6 fw-bold text-light">Guia Prático e Interativo de Matemática e Física</h1>
+        <p class="col-md-10 fs-6 text-muted">Aprenda Aritmética, Álgebra e Eletromagnetismo através de fórmulas formatadas, significado das variáveis, visualizações gráficas e simuladores em tempo real.</p>
       </div>
 
       <!-- CAPÍTULO 10: ARITMÉTICA -->
@@ -160,7 +165,7 @@
         </div>
       </div>
 
-<!-- Matemática Financeira & Juros -->
+      <!-- Matemática Financeira & Juros -->
       <div class="card card-custom" id="financeira">
         <div class="card-header card-header-custom"><i class="bi bi-cash-coin"></i> Matemática Financeira</div>
         <div class="card-body">
@@ -469,47 +474,218 @@
           </div>
         </div>
       </div>
+<!-- CAPÍTULO 6: FÍSICA - INDUÇÃO E FLUXO MAGNÉTICO -->
+      <h2 class="text-warning border-bottom border-secondary pb-2 mb-4 mt-5" id="fisica-forca">Capítulo 6 (Física): Indução e Fluxo Magnético</h2>
 
-<!-- ... Último Card de Conteúdo (Capítulo 11) ... -->
-
-        <!-- Rodapé / Footer alinhado com a área principal -->
-        <footer class="bg-dark-sidebar border-top border-secondary py-4 mt-5 rounded-top">
-          <div class="container-fluid text-center text-md-start px-3">
-            <div class="row align-items-center gy-3">
-              <!-- Nome e Descrição -->
-              <div class="col-md-6">
-                <h6 class="text-info mb-1 fw-bold">
-                   &copy; Resumo Math by Jyun 2026
-                </h6>
-                <p class="text-muted small mb-0">
-                  Plataforma interativa para consulta rápida de fórmulas e conceitos de Aritmética e Álgebra.
-                </p>
-              </div>
-
-              <!-- Links de Contato e Instrução do Assunto -->
-              <div class="col-md-6 text-md-end">
-                <span class="text-muted small d-block mb-1">
-                  Encontrou um erro ou quer contribuir?
-                </span>
-                <p class="text-warning small mb-2" style="font-size: 0.82rem;">
-                  <i class="bi bi-exclamation-triangle me-1"></i> Ao enviar mensagem, coloque <strong>"Resumo Math"</strong> no assunto (subject).
-                </p>
-                <a href="https://rjyun10.github.io/#contato" target="_blank" class="btn btn-outline-info btn-sm px-3 fw-bold">
-                  <i class="bi bi-envelope-heart me-1"></i> Fale Conosco / Contato
-                </a>
+      <!-- Força Magnética sobre Condutor + Simulador -->
+      <div class="card card-custom">
+        <div class="card-header card-header-custom text-warning"><i class="bi bi-magnet"></i> Força Magnética sobre um Condutor</div>
+        <div class="card-body">
+          <div class="row border-bottom border-secondary pb-4 mb-4">
+            <div class="col-md-6 mb-3">
+              <h5>Intensidade da Força Magnética</h5>
+              <p class="text-muted">A força exercida sobre um fio retilíneo percorrido por corrente elétrica imerso em um campo magnético uniforme é dada por:</p>
+              <p class="fs-4 text-warning">$$F = B \cdot i \cdot L \cdot \sin(\theta)$$</p>
+              
+              <div class="bg-dark p-3 rounded mt-3 border border-secondary">
+                <h6 class="text-warning mb-2"><i class="bi bi-key"></i> Legenda das Variáveis:</h6>
+                <div class="row text-muted small">
+                  <div class="col-6"><strong>F:</strong> Força Magnética (N)</div>
+                  <div class="col-6"><strong>B:</strong> Campo Magnético (T - Tesla)</div>
+                  <div class="col-6 mt-1"><strong>i:</strong> Corrente Elétrica (A)</div>
+                  <div class="col-6 mt-1"><strong>L:</strong> Comprimento do fio (m)</div>
+                  <div class="col-12 mt-1"><strong>$\theta$:</strong> Ângulo entre o fio e o campo (graus)</div>
+                </div>
               </div>
             </div>
 
-            <!-- Linha Divisória de Direitos -->
-            <div class="border-top border-secondary mt-3 pt-3 text-center text-muted small">
-              Desenvolvido para estudo e apoio acadêmico &bull; Tema Noturno Otimizado
+            <div class="col-md-6 mb-3">
+              <h5>Direção e Sentido</h5>
+              <ul class="small text-muted">
+                <li class="mb-2"><strong>Regra da Mão Direita:</strong> O polegar indica o sentido da corrente ($i$), os dedos apontam o campo ($B$) e a força ($F$) sai da palma da mão.</li>
+                <li class="mb-2"><strong>Força entre condutores paralelos:</strong> Fios com correntes no mesmo sentido se <em>atraem</em>; com sentidos opostos, se <em>repelem</em>.</li>
+                <li><strong>Casos Particulares:</strong>
+                  <ul>
+                    <li>Paralelo ($\theta = 0^\circ$ ou $180^\circ$): $F = 0$ (Força nula)</li>
+                    <li>Perpendicular ($\theta = 90^\circ$): $F_{máx} = B \cdot i \cdot L$ ($\sin 90^\circ = 1$)</li>
+                  </ul>
+                </li>
+              </ul>
             </div>
           </div>
-        </footer>
 
-      </main> <!-- Fechamento da tag main -->
-    </div> <!-- Fechamento da row -->
-  </div> <!-- Fechamento da container-fluid -->
+          <!-- SIMULADOR INTERATIVO DE FORÇA MAGNÉTICA -->
+          <h5 class="text-warning mb-3"><i class="bi bi-sliders"></i> Simulador de Força Magnética</h5>
+          <div class="row align-items-center">
+            <div class="col-lg-5 mb-3">
+              <label class="form-label">Campo Magnético ($B$): <span id="valMagB" class="badge bg-warning text-dark">2.0 T</span></label>
+              <input type="range" class="form-range" id="sliderMagB" min="0" max="10" step="0.5" value="2" oninput="updateForcaMag()">
+
+              <label class="form-label mt-2">Corrente Elétrica ($i$): <span id="valMagI" class="badge bg-warning text-dark">5.0 A</span></label>
+              <input type="range" class="form-range" id="sliderMagI" min="0" max="20" step="1" value="5" oninput="updateForcaMag()">
+
+              <label class="form-label mt-2">Comprimento do Fio ($L$): <span id="valMagL" class="badge bg-warning text-dark">1.5 m</span></label>
+              <input type="range" class="form-range" id="sliderMagL" min="0.1" max="5" step="0.1" value="1.5" oninput="updateForcaMag()">
+
+              <label class="form-label mt-2">Ângulo ($\theta$): <span id="valMagTheta" class="badge bg-warning text-dark">90°</span></label>
+              <input type="range" class="form-range" id="sliderMagTheta" min="0" max="180" step="15" value="90" oninput="updateForcaMag()">
+            </div>
+
+            <div class="col-lg-7">
+              <div class="p-4 bg-dark border border-warning rounded text-center">
+                <h6 class="text-muted text-uppercase">Resultado do Cálculo</h6>
+                <h2 class="display-5 fw-bold text-warning my-2" id="resForcaMag">15.00 N</h2>
+                <p class="small text-muted mb-0" id="detalhesForca">F = 2.0 × 5.0 × 1.5 × sin(90°) = 15.00 N</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- EXEMPLO PRÁTICO RESOLVIDO -->
+          <div class="mt-4 p-3 bg-dark border border-secondary rounded">
+            <h6 class="text-info"><i class="bi bi-journal-check"></i> Exemplo Prático Resolvido</h6>
+            <p class="small text-muted mb-1"><strong>Problema:</strong> Um fio condutor de $0,8\text{ m}$ é percorrido por uma corrente de $4\text{ A}$ imerso em um campo magnético uniforme de $0,5\text{ T}$, fazendo um ângulo de $30^\circ$ com as linhas de campo. Calcule a força magnética sobre o fio.</p>
+            <div class="small text-light bg-black p-2 rounded mt-2 font-monospace">
+              $F = B \cdot i \cdot L \cdot \sin(\theta)$<br>
+              $F = 0,5 \cdot 4 \cdot 0,8 \cdot \sin(30^\circ)$ &nbsp;&nbsp;(Sabendo que $\sin 30^\circ = 0,5$)<br>
+              $F = 1,6 \cdot 0,5 = \mathbf{0,8\text{ N}}$
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aplicações da Força Magnética -->
+      <div class="card card-custom" id="fisica-aplicacoes">
+        <div class="card-header card-header-custom text-warning"><i class="bi bi-cpu"></i> Aplicações Práticas (Motores, Eletroímãs e Disjuntores)</div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <div class="p-3 bg-dark border border-secondary rounded h-100">
+                <h6 class="text-warning"><i class="bi bi-gear-wide-connected me-1"></i> O Motor Elétrico</h6>
+                <p class="small text-muted">Converte energia elétrica em mecânica. Quando a corrente passa pelas espiras em um campo magnético, surge um par de forças de sentidos opostos que faz o eixo girar continuamente.</p>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="p-3 bg-dark border border-secondary rounded h-100">
+                <h6 class="text-warning"><i class="bi bi-magnet-fill me-1"></i> O Eletroímã & Disjuntores</h6>
+                <p class="small text-muted">Bobinas enroladas em núcleo de ferro magnético. Em disjuntores magnéticos, um pico de corrente gera força suficiente para puxar uma trava e interromper o circuito.</p>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="p-3 bg-dark border border-secondary rounded h-100">
+                <h6 class="text-warning"><i class="bi bi-train-front me-1"></i> Levitação Magnética (Maglev)</h6>
+                <p class="small text-muted">Eletroímãs e supercondutores geram repulsão magnética suficiente para suspender o trem sobre os trilhos, eliminando o atrito direto e atingindo altíssimas velocidades.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indução Eletromagnética: Lei de Faraday e Lenz + GRÁFICO DA FEM -->
+      <div class="card card-custom" id="fisica-inducao">
+        <div class="card-header card-header-custom text-warning"><i class="bi bi-lightning-charge"></i> Indução Eletromagnética (Lei de Faraday-Neumann & Lenz)</div>
+        <div class="card-body">
+          <div class="row border-bottom border-secondary pb-4 mb-4">
+            <div class="col-md-6 mb-3">
+              <h5>Fluxo Magnético ($\Phi$) & Lei de Faraday</h5>
+              <p class="text-muted mb-1">O <strong>Fluxo Magnético ($\Phi$)</strong> mede a quantidade de linhas de campo que atravessam uma superfície:</p>
+              <p>$$\Phi = B \cdot A \cdot \cos(\theta)$$</p>
+              <p class="text-muted small"><strong>Lei de Faraday-Neumann:</strong> Sempre que houver variação do fluxo magnético ($\Delta \Phi$) através de uma espira no tempo ($\Delta t$), uma força eletromotriz (fem) induzida ($\varepsilon$) é gerada:</p>
+              <p class="fs-5 text-warning">$$\varepsilon = - \frac{\Delta \Phi}{\Delta t}$$</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <h5>Lei de Lenz e Sentido da Corrente</h5>
+              <div class="p-3 bg-dark border border-warning rounded text-muted small mb-3">
+                <i class="bi bi-lightbulb text-warning"></i> <em>"A corrente induzida possui um sentido tal que seu próprio campo magnético se opõe à variação do fluxo que a originou."</em>
+              </div>
+              <ul class="small text-muted">
+                <li><strong>Fluxo Aumentando:</strong> O campo induzido atua no <em>sentido oposto</em> para conter o aumento.</li>
+                <li><strong>Fluxo Diminuindo:</strong> O campo induzido atua no <em>mesmo sentido</em> para evitar a redução.</li>
+                <li><strong>Ondas Eletromagnéticas:</strong> Propagação de campos elétricos e magnéticos oscilantes e perpendiculares entre si ($\text{velocidade } c \approx 3 \cdot 10^8\text{ m/s}$).</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- GRÁFICO INTERATIVO DE VARIAÇÃO DO FLUXO E FEM INDUZIDA -->
+          <h5 class="text-warning mb-3"><i class="bi bi-graph-up text-warning me-1"></i> Gráfico Interativo: Fluxo Magnético x Tensão (fem Induzida)</h5>
+          <div class="row">
+            <div class="col-lg-5 mb-3">
+              <label class="form-label">Frequência da Oscilação (Hz):</label>
+              <input type="range" class="form-range" id="sliderFreq" min="1" max="5" step="1" value="2" oninput="updateChartInducao()">
+
+              <label class="form-label mt-2">Amplitude do Campo ($B_{máx}$):</label>
+              <input type="range" class="form-range" id="sliderAmp" min="1" max="10" step="1" value="5" oninput="updateChartInducao()">
+
+              <div class="alert alert-dark border-secondary small text-muted mt-3">
+                <i class="bi bi-info-circle text-info me-1"></i> Observe como a <strong>fem induzida (linha amarela)</strong> atinge seus picos onde o <strong>fluxo magnético (linha azul)</strong> varia mais rapidamente!
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <canvas id="chartInducao"></canvas>
+            </div>
+          </div>
+
+          <!-- EXEMPLO PRÁTICO RESOLVIDO - FARADAY -->
+          <div class="mt-4 p-3 bg-dark border border-secondary rounded">
+            <h6 class="text-info"><i class="bi bi-journal-check"></i> Exemplo Prático Resolvido (Lei de Faraday)</h6>
+            <p class="small text-muted mb-1"><strong>Problema:</strong> O fluxo magnético através de uma espira passa de $12\text{ Wb}$ para $2\text{ Wb}$ em um intervalo de tempo de $0,5\text{ segundos}$. Determine o valor da força eletromotriz (fem) induzida na espira.</p>
+            <div class="small text-light bg-black p-2 rounded mt-2 font-monospace">
+              $\Delta \Phi = \Phi_{final} - \Phi_{inicial} = 2 - 12 = -10\text{ Wb}$<br>
+              $\varepsilon = - \frac{\Delta \Phi}{\Delta t} = - \left( \frac{-10}{0,5} \right) = \mathbf{20\text{ V}}$
+            </div>
+          </div>
+
+          <!-- LEGENDA GERAL DE FÍSICA -->
+          <div class="bg-dark p-3 rounded mt-4 border border-secondary">
+            <h6 class="text-warning mb-2"><i class="bi bi-key"></i> Legenda Global de Variáveis (Física):</h6>
+            <div class="row text-muted small">
+              <div class="col-6 col-md-3"><strong>$\Phi$:</strong> Fluxo Magnético (Wb - Weber)</div>
+              <div class="col-6 col-md-3"><strong>A:</strong> Área da espira ($m^2$)</div>
+              <div class="col-6 col-md-3"><strong>$\varepsilon$ (fem):</strong> Força Eletromotriz (V - Volts)</div>
+              <div class="col-6 col-md-3"><strong>$\Delta t$:</strong> Intervalo de Tempo (s)</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Rodapé / Footer alinhado com a área principal -->
+      <footer class="bg-dark-sidebar border-top border-secondary py-4 mt-5 rounded-top">
+        <div class="container-fluid text-center text-md-start px-3">
+          <div class="row align-items-center gy-3">
+            <!-- Nome e Descrição -->
+            <div class="col-md-6">
+              <h6 class="text-info mb-1 fw-bold">
+                 &copy; Resumo Geral by Jyun 2026
+              </h6>
+              <p class="text-muted small mb-0">
+                Plataforma interativa para consulta rápida de fórmulas e conceitos de Matemática e Física.
+              </p>
+            </div>
+
+            <!-- Links de Contato e Instrução do Assunto -->
+            <div class="col-md-6 text-md-end">
+              <span class="text-muted small d-block mb-1">
+                Encontrou um erro ou quer contribuir?
+              </span>
+              <p class="text-warning small mb-2" style="font-size: 0.82rem;">
+                <i class="bi bi-exclamation-triangle me-1"></i> Ao enviar mensagem, coloque <strong>"Resumo Math"</strong> no assunto (subject).
+              </p>
+              <a href="https://rjyun10.github.io/#contato" target="_blank" class="btn btn-outline-info btn-sm px-3 fw-bold">
+                <i class="bi bi-envelope-heart me-1"></i> Fale Conosco / Contato
+              </a>
+            </div>
+          </div>
+
+          <!-- Linha Divisória de Direitos -->
+          <div class="border-top border-secondary mt-3 pt-3 text-center text-muted small">
+            Desenvolvido para estudo e apoio acadêmico &bull; Tema Noturno Otimizado
+          </div>
+        </div>
+      </footer>
+
+    </main> <!-- Fechamento da tag main -->
+  </div> <!-- Fechamento da row -->
+</div> <!-- Fechamento da container-fluid -->
 
 <!-- Bootstrap 5 JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

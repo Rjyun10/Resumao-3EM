@@ -132,6 +132,62 @@ function updateQuad() {
   });
 }
 
+// --- 5. FÍSICA: SIMULADOR DE FORÇA MAGNÉTICA ---
+function updateForcaMag() {
+  const B = parseFloat(document.getElementById('sliderMagB').value);
+  const i = parseFloat(document.getElementById('sliderMagI').value);
+  const L = parseFloat(document.getElementById('sliderMagL').value);
+  const thetaDeg = parseFloat(document.getElementById('sliderMagTheta').value);
+
+  document.getElementById('valMagB').innerText = `${B.toFixed(1)} T`;
+  document.getElementById('valMagI').innerText = `${i.toFixed(1)} A`;
+  document.getElementById('valMagL').innerText = `${L.toFixed(1)} m`;
+  document.getElementById('valMagTheta').innerText = `${thetaDeg}°`;
+
+  const thetaRad = (thetaDeg * Math.PI) / 180;
+  const F = B * i * L * Math.sin(thetaRad);
+
+  document.getElementById('resForcaMag').innerText = `${F.toFixed(2)} N`;
+  document.getElementById('detalhesForca').innerText = 
+    `F = ${B.toFixed(1)} × ${i.toFixed(1)} × ${L.toFixed(1)} × sin(${thetaDeg}°) = ${F.toFixed(2)} N`;
+}
+
+// --- 6. FÍSICA: GRÁFICO DE INDUÇÃO (FLUXO X FEM) ---
+let chartInducaoInstance = null;
+
+function updateChartInducao() {
+  const freq = parseFloat(document.getElementById('sliderFreq').value);
+  const amp = parseFloat(document.getElementById('sliderAmp').value);
+
+  let times = [], fluxos = [], fems = [];
+  for (let t = 0; t <= 10; t += 0.2) {
+    times.push(`${t.toFixed(1)}s`);
+    // Fluxo Magnético: Phi(t) = Amp * cos(freq * t)
+    let phi = amp * Math.cos(freq * t);
+    // fem Induzida (Derivada com sinal trocado): fem(t) = Amp * freq * sin(freq * t)
+    let fem = amp * freq * Math.sin(freq * t);
+
+    fluxos.push(phi.toFixed(2));
+    fems.push(fem.toFixed(2));
+  }
+
+  const ctx = document.getElementById('chartInducao').getContext('2d');
+  if (chartInducaoInstance) chartInducaoInstance.destroy();
+
+  chartInducaoInstance = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: times,
+      datasets: [
+        { label: 'Fluxo Magnético (Φ)', data: fluxos, borderColor: '#38bdf8', backgroundColor: '#38bdf8', tension: 0.4 },
+        { label: 'fem Induzida (ε)', data: fems, borderColor: '#eab308', backgroundColor: '#eab308', tension: 0.4 }
+      ]
+    },
+    options: { responsive: true, maintainAspectRatio: false }
+  });
+}
+
+// Inicialização Geral
 window.onload = function() {
   calcularJuros();
   calcPermutacao();
@@ -139,25 +195,11 @@ window.onload = function() {
   calcCombinacao();
   updateAfim();
   updateQuad();
+  updateForcaMag();
+  updateChartInducao();
   renderMath();
 };
-// Função para alternar o container para Tela Cheia (Fullscreen API)
-function toggleFullscreen() {
-  const container = document.getElementById('darkInvestContainer');
-  if (!document.fullscreenElement) {
-    if (container.requestFullscreen) {
-      container.requestFullscreen();
-    } else if (container.webkitRequestFullscreen) { /* Safari */
-      container.webkitRequestFullscreen();
-    } else if (container.msRequestFullscreen) { /* IE11 */
-      container.msRequestFullscreen();
-    }
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    }
-  }
-}
+
 document.addEventListener('DOMContentLoaded', function () {
   const sidebarMenu = document.getElementById('sidebarMenu');
   if (!sidebarMenu) return;
@@ -167,7 +209,6 @@ document.addEventListener('DOMContentLoaded', function () {
   navLinks.forEach(function (link) {
     link.addEventListener('click', function () {
       if (window.innerWidth < 768 && sidebarMenu.classList.contains('show')) {
-        // Aguarda um pequeno instante para a navegação suave iniciar antes de fechar
         setTimeout(() => {
           const bsCollapse = bootstrap.Collapse.getInstance(sidebarMenu) || new bootstrap.Collapse(sidebarMenu);
           bsCollapse.hide();
